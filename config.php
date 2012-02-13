@@ -19,7 +19,7 @@ define('FOOTER_SEPERATOR', ' | ');
 
 //links in the footer('Name of link' => 'http://ulr-link.com/')
 $FOOTER_LINKS = array(
-'Contact' 					=> '/contact/', 
+'Contact' 					=> '/contact/',
 'Follow Me on Twitter' 		=> 'http://twitter.com/#!/thanegill',
 'thanegill.com' 			=> 'http://thanegill.com/',
 '&copy; ' . date('Y')		=> '#',
