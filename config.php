@@ -1,6 +1,9 @@
 <?php
-//This is a branch test
-
+//mySQL Config
+define('MYSQL_HOST', 'localhost');
+define('MYSQL_USER', 'root');
+define('MYSQL_PASSWORD', 'root');
+define('MYSQL_DATABASE', 'itc280');
 
 //Name of folder in the themes folder
 define('THEME_FOLDER', 'noisy-grey');
