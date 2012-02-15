@@ -17,7 +17,8 @@ $result = mysql_query($sql, $myConn);
 <h1>Database A6</h1>
 <?php
 
-if (mysql_num_rows($result) > 0) {//at least one record!
+if (mysql_num_rows($result) > 0) {
+//at least one record!
 //show results
     while ($row = mysql_fetch_assoc($result)) {
        echo("<p>");
@@ -35,4 +36,10 @@ if (mysql_num_rows($result) > 0) {//at least one record!
 
 displayCommentForm();
 displayFooter();
+?>
+
+
+<?php
+function findRoot() { return(substr($_SERVER['SCRIPT_FILENAME'], 0, (stripos($_SERVER['SCRIPT_FILENAME'], $_SERVER['SCRIPT_NAME'])+1))); }
+
 ?>

@@ -10,5 +10,4 @@ for ($i=(sizeof($posts)-1); 0 <= $i; $i--) {
 }
 
 displayFooter();
-
 ?>
