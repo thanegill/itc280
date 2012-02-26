@@ -8,6 +8,7 @@ displayHead('Time Sheet'); //Site Title (address bar) appended with " | Thane Gi
 
 ?>
 <article>
+    <h1 class="center"><a href="/posts/timesheet/">Time Sheet</a></h1>
 	<table class="inLineTable">
 		<thead>
 			<tr>

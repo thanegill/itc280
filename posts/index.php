@@ -30,7 +30,7 @@ function displayPost($postLink) {
 	$error = true;
 	
 	for ($j=(sizeof($posts)-1); 0 <= $j; $j--) {
-		if($posts[$j]->getLink() == $postLink) {
+		if ($posts[$j]->getLink() == $postLink) {
 			displayHead($posts[$j]->GetFullTitle());
 			$posts[$j]->displayArticle();
 			$posts[$j]->displayComments();
@@ -56,7 +56,6 @@ function displayType($type) {
 	} elseif ($type == 'resource') {
 		displayHead('Resource Posts');
 	}
-	
 	
 	if ($type == 'assignment' || $type == 'extracredit' || $type == 'resource') {
 		for ($j=(sizeof($posts)-1); 0 <= $j; $j--) {

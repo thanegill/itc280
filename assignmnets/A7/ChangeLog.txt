@@ -1,0 +1,98 @@
+ChangeLog for nmCommon Package: 2010-06-16  Bill Newman  <williamnewman@gmail.com>
+
+This is an informal changelog, a summary of changes in each version and between.
+Changes are categorized as Change, Fix, Sec (Security Issue) or Feature.
+
+Version 2.091(2011-06-16)
+[Fix] onlyEmail() function disallowed a period in the domain, ie: sccd.ctc.edu - fixed
+[Feature] Added custom_inc.php for user created functions
+
+Version 2.09(2011-05-09)
+[Feature] Add rotate() and randomize() function to vary content in sidebars (needs doc, examples)
+[Change] Changed reference to model to demo for all example files - model has MVC connotation
+[Feature] Added smartTitle() to title tag to guarantee unique title & meta descriptions
+
+Version 2.08(2010-12-30)
+[Feature] rte() now looks for a file named fckeditor.css inside the theme folder for EditArea styles
+[Fix] fixes issue with config->BenchNote not showing up in header
+
+Version 2.07(2010-11-15)
+[Feature] adds htmlSelector(), smartTitle() addLink() and get/showFlash() functions
+[Change] Updated docs, removed confusing strings in config file
+
+Version 2.06(2010-11-01)
+[Change] Added themes folder and support changed get_header() in common_inc.php
+[Fix] config_test.php re-written and copied to root as index.php
+[Change] Instruction files re-written to support new config_test/index file
+ 
+Version 2.05(2010-10-15)
+[Change] Changed getENUM() to regex version - createImagePrefix() moved to common  
+ 
+Version 2.04(2010-10-01?)
+[Change] Added true/false return for sessionStart(), benchmark in get_header() 
+
+Version 2.03 (2010-07-30)
+[Fix] error_test.php (ironically) had an error
+[Change] Minimal php.ini file added to root of sprockets folder to accomodate freehostia
+[Fix] config_test.php changed to add support for servers not supporting SCRIPT_URI
+[Change] Added 'dummy' file delete_after_upload.txt to log folder since uploading an empty folder can be disallowed
+
+Version 2.02 (2010-07-27)
+[Feature] Added flexibility to makeLinks() function, sniffs for http or https and doesn't add relative path
+[Fix] Had typo ("s" at end of "mysqldatabase" string) in conn_inc.php
+
+Version 2.01 (2010-07-27)
+[Feature] Added support for separator between text and title in makeLinks() function
+[Change] Removed benchmarking from common_inc.php - will be added in separate package
+[Change] Removed fileWrite() from common_inc.php, changed to fileWrite() in config_inc.php - was redundant
+
+Version 2.0 (2010-07-22)
+[Feature] Added Config object to store all global vars for theming, nav & content
+[Feature] Added meta_inc.php for meta data inside header files
+[Feature] Added getENUM(), makeLinks() functions to common_inc.php
+[Change] Default setup is now all inside web root - moving include files out of web root advised
+[Fix] Fixed myRedirect() to accommodate zephir oddities
+
+Version 1.32 (2010-05-10)
+[Feature] added config_test.php for testing remote host paths
+[Fix] default customer table is now named test_Customers to match ITC280 class
+
+Version 1.31 (2010-05-05)
+[Change] There was a typo in header_inc.php that was crashing page - too many semi-colons in meta tag vars
+[Fix] Copied fileWrite() to file_write() function in config_inc.php to sever dependency on error reporting
+[Change] config_inc.php defaults to dated .txt version of log file by default
+
+Version 1.3 (2010-02-16)
+[Fix] Changed ereg to preg_match in Common_inc.php to be PHP 5.3 compatible
+[Change] conn_inc.php re-written to default to mysqli, removed constant
+[Feature] Database pages all named model_idb.php, etc.  Added model_contact.php
+[Feature] util.js file added includes empty() function for reCAPTCHA 
+
+Version 1.2 (2009-10-30)
+[Change] Added get_header() and get_footer() functions to each page to swap out header/footer files
+[Change] Added meta tags variables to config_inc.php & header_inc.php
+[Feature] Added ability to append to PHP log file 
+[Fix] Merged PHP & custom error handling & logging - updated config_inc.php
+[Feature] Added idata & mydata pages to demo mysql classic vs mysqli improved stubs
+
+Version 1.1 (2009-07-23)
+[Change] Edited config_inc.php to remove reference to pager_inc.php (part of nmPager package) 
+
+Version 1.0 ?
+[Change] Previous version of nmCommon include files named INC.php instead of _inc.php.
+
+TODO:
+
+Added smartTitle() not documented or an example made.
+
+Need demos of rotate() and randomize() and integrate with htmlSelector/pageSelector
+
+Want to add flashMessage() support for all feedback - this means changing iformReq(), et al.
+May also mean a change to mysqli only - we'll see!
+change to loadFeedback() and showFeedback() instead of get/showFlash()? needs demo and integration with iFormReq, etc.
+add common stylesheet, common.css to provide styles for flash messages - add to meta_inc.php
+
+build getContent() function to retrieve content from: include file, SQL, HTML, etc.
+htmlSelector needs to be changed to pageSelector()?
+
+Document addLink() function

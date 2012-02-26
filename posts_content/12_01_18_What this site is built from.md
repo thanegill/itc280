@@ -36,9 +36,15 @@ This is one that from your stand point you would never know that I was using it.
 			font-size: 26px;
 			font-weight: bold;
 		}
-		p { font-size: 12px;
-			a { text-decoration: none;
-				&:hover { border-width: 1px;
+		
+		p {
+			font-size: 12px;
+			
+			a {
+				text-decoration: none;
+				
+				&:hover {
+					border-width: 1px;
 				}
 			}
 		}
@@ -46,17 +52,17 @@ This is one that from your stand point you would never know that I was using it.
 	
 ####Compiled CSS
 	#header h1 {
-	font-size: 26px;
-	font-weight: bold;
+		font-size: 26px;
+		font-weight: bold;
 	}
 	#header p {
-	font-size: 12px;
+		font-size: 12px;
 	}
 	#header p a {
-	text-decoration: none;
+		text-decoration: none;
 	}
 	#header p a:hover {
-	border-width: 1px;
+		border-width: 1px;
 	}
 
 Well worth a look at. [Less CSS](http://lesscss.org/)

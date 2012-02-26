@@ -1,0 +1,20 @@
+[Feb-22-2012 16:33:14] Undefined variable: PageTitle in /Users/thanegill/Dropbox/ITC280/assignmnets/A7/sprockets/error_test.php on line 36
+[Feb-22-2012 16:33:14] Undefined variable: myvar in /Users/thanegill/Dropbox/ITC280/assignmnets/A7/sprockets/error_test.php on line 54
+[Feb-22-2012 16:33:14] include(fake_inc.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /Users/thanegill/Dropbox/ITC280/assignmnets/A7/sprockets/error_test.php on line 55
+[Feb-22-2012 16:33:14] include() [<a href='function.include'>function.include</a>]: Failed opening 'fake_inc.php' for inclusion (include_path='.:/Applications/MAMP/bin/php/php5.2.17/lib/php') in /Users/thanegill/Dropbox/ITC280/assignmnets/A7/sprockets/error_test.php on line 55
+[Feb-22-2012 16:33:14] Division by zero in /Users/thanegill/Dropbox/ITC280/assignmnets/A7/sprockets/error_test.php on line 56
+[Feb-22-2012 16:33:27] mysql_connect() [<a href='function.mysql-connect'>function.mysql-connect</a>]: Access denied for user 'mysqlusername'@'localhost' (using password: YES) in /Users/thanegill/Dropbox/ITC280/assignmnets/A7/sprockets/inc_0700/conn_inc.php on line 98
+[Feb-22-2012 16:33:27] Access denied for user 'mysqlusername'@'localhost' (using password: YES) in /Users/thanegill/Dropbox/ITC280/assignmnets/A7/sprockets/inc_0700/conn_inc.php on line 98
+[Feb-22-2012 16:39:04] session_start() [<a href='function.session-start'>function.session-start</a>]: open(/home/classes/wgill002/sessions/sess_1e9ad69f96f9b0dcc78a20699065bb49, O_RDWR) failed: No such file or directory (2) in /Users/thanegill/Dropbox/ITC280/assignmnets/A7/sprockets/inc_0700/common_inc.php on line 193
+[Feb-22-2012 16:39:04] Unknown: open(/home/classes/wgill002/sessions/sess_1e9ad69f96f9b0dcc78a20699065bb49, O_RDWR) failed: No such file or directory (2) in Unknown on line 0
+[Feb-22-2012 16:39:04] Unknown: Failed to write session data (files). Please verify that the current setting of session.save_path is correct (/home/classes/wgill002/sessions) in Unknown on line 0
+[Feb-22-2012 17:16:58] Undefined variable: PageTitle in /Users/thanegill/Dropbox/ITC280/assignmnets/A7/sprockets/error_test.php on line 36
+[Feb-22-2012 17:16:58] Undefined variable: myvar in /Users/thanegill/Dropbox/ITC280/assignmnets/A7/sprockets/error_test.php on line 54
+[Feb-22-2012 17:16:58] include(fake_inc.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /Users/thanegill/Dropbox/ITC280/assignmnets/A7/sprockets/error_test.php on line 55
+[Feb-22-2012 17:16:58] include() [<a href='function.include'>function.include</a>]: Failed opening 'fake_inc.php' for inclusion (include_path='.:/Applications/MAMP/bin/php/php5.2.17/lib/php') in /Users/thanegill/Dropbox/ITC280/assignmnets/A7/sprockets/error_test.php on line 55
+[Feb-22-2012 17:16:58] Division by zero in /Users/thanegill/Dropbox/ITC280/assignmnets/A7/sprockets/error_test.php on line 56
+[Feb-22-2012 17:30:12] Undefined variable: PageTitle in /Users/thanegill/Dropbox/ITC280/assignmnets/A7/sprockets/error_test.php on line 36
+[Feb-22-2012 17:30:12] Undefined variable: myvar in /Users/thanegill/Dropbox/ITC280/assignmnets/A7/sprockets/error_test.php on line 54
+[Feb-22-2012 17:30:12] include(fake_inc.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /Users/thanegill/Dropbox/ITC280/assignmnets/A7/sprockets/error_test.php on line 55
+[Feb-22-2012 17:30:12] include() [<a href='function.include'>function.include</a>]: Failed opening 'fake_inc.php' for inclusion (include_path='.:/Applications/MAMP/bin/php/php5.2.17/lib/php') in /Users/thanegill/Dropbox/ITC280/assignmnets/A7/sprockets/error_test.php on line 55
+[Feb-22-2012 17:30:12] Division by zero in /Users/thanegill/Dropbox/ITC280/assignmnets/A7/sprockets/error_test.php on line 56

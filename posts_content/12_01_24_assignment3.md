@@ -4,7 +4,7 @@ Date: 2012-01-24
 Time Spent: 20
 
 
-[Assignmnet 3](/assignmnets/A3)
+[Assignment 3](/assignmnets/A3)
 
 	<html>
 	<head>

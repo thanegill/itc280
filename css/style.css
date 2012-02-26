@@ -341,11 +341,7 @@ nav ul li:hover ul li a:hover {
   width: 400px;
   border: 0;
 }
-/*
-
-Sunburst-like style (c) Vasily Polovnyov <vast@whiteants.net>
-
-*/
+/* Sunburst-like style (c) Vasily Polovnyov <vast@whiteants.net> */
 pre .comment,
 pre .template_comment,
 pre .javadoc {
@@ -511,10 +507,10 @@ article {
 article:last-of-type {
   border: none;
 }
-#footer {
+footer {
   padding: 3px 0;
 }
-#footer small#footer_links {
+footer small#footer_links {
   display: block;
   font-size: 11px;
   text-align: center;

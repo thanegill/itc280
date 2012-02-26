@@ -7,9 +7,10 @@ displayHead('Contact Me');
 
 ?>
 <article>
+	<h1 class="center">Contact Me</h1>
+	
 	<form class="comment_form contact" name="comment_form" method="POST" action="/thankyou" onSubmit="return evalid()">
 		<script src="/js/validate.js" type="text/javascript"></script>
-		<h1>Contact Me:</h1>
 		<table>
 			<tr>
 				<td class="text"><p>Name:</p></td>
