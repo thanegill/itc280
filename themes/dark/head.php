@@ -5,13 +5,9 @@
 	<title><?php echo($pageTitle . TITLE_TAG_END); ?></title>
 	<?php 
 		displayCSS(); 
-		displayJS();
+	 	displayJS();
+ 		displayShim();
 	?>
-	
-	<!--[if lt IE 9]>
-	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-	<![endif]-->
-		
 </head>
 <body>
     <div id="body_inner">

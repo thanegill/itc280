@@ -440,6 +440,7 @@ html {
 body {
   width: 960px;
   margin: 0 auto;
+  background-image: url("../images/texture.png");
 }
 #body_inner {
   padding: 0px 30px 2px 30px;

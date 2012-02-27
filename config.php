@@ -24,18 +24,20 @@ define('ARTICLE_FOLDER', 'posts_content');
 //Theme Cookie Time out in days
 define('THEME_TIME', '30');
 
-//TODO:
-//Images foler in theme to load (no slashes)
-//define('IMG_FOLDER', 'images');
-
 //CSS foler in theme to load (no slashes)
 define('CSS_FOLDER', 'css');
 
 //JS foler in theme to load (no slashes)
 define('JS_FOLDER', 'js');
 
-//Torn on or off html5 shiv/shim (TRUE/FALSE)
+//Turn on or off html5 shiv/shim (TRUE/FALSE)
 define('DISPLAY_SHIM', TRUE);
+
+//Turn on or off IE redirect
+define('IE_BUMP', TRUE);
+
+//Location to bump IE users to
+define('IE_BUMP_LOCATION', '/ie_sucks.html');
 
 //Header across all pages at top
 define('SITE_NAME', 'Thane Gill &#10093; ITC 280');
