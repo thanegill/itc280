@@ -9,13 +9,13 @@ if (!function_exists('findRoot')) {
 }
 
 include_once(findRoot() . 'config.php');
-include_once(findRoot() . 'includes/markdown.php');
 include_once(findRoot() . 'includes/util.php');
-include_once(findRoot() . 'includes/Post.php');
 include_once(findRoot() . 'includes/theme.php');
+include_once(findRoot() . 'includes/markdown.php');
+include_once(findRoot() . 'includes/Post.php');
 
 //Get posts
-$posts = getPosts(findRoot() . 'posts_content');
+$posts = getPosts(findRoot() . ARTICLE_FOLDER);
 
 //Get theme
 if (isset($_COOKIE["theme"])) {

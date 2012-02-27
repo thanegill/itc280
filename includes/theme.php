@@ -1,4 +1,9 @@
 <?php
+function getRelPath($path) {
+	return(substr($path, strlen(findRoot())-1, strlen($path)));
+}
+
+
 function displayHead($title = '') {
 	global $posts;
 	$pageTitle = $title;
@@ -10,18 +15,24 @@ function displayCSS() {
 	$cssFiles = getFiles(findRoot() . 'themes/' . THEME_FOLDER . '/' . CSS_FOLDER);
 	for ($i = 0; $i < sizeof($cssFiles); $i++) {
 		$cssFiles[$i] = substr($cssFiles[$i], strlen(findRoot())-1, strlen($cssFiles[$i]));
-		echo('<link rel="stylesheet" href="' . $cssFiles[$i] . '" type="text/css"/>');
+		echor('	<link rel="stylesheet" type="text/css" href="' . $cssFiles[$i] . '" />');
 	}
 }
 
-//TODO
-//function displayJS() {
-//	
-//	$jsFiles = getFiles('themes/' . THEME_FOLDER . '/' . JS_FOLDER);
-//	for ($i = 0; $i < sizeof($jsFiles); $i++) {
-//		echo('<link rel="stylesheet" href="/' . $cssFiles[$i] . '" type="text/css"/>');
-//	}
-//}
+function displayJS() {
+	$jsFiles = getFiles(findRoot() . 'themes/' . THEME_FOLDER . '/' . JS_FOLDER);
+	for ($i = 0; $i < sizeof($jsFiles); $i++) {
+		echor('	<script type="text/javascript" src="' . getRelPath($jsFiles[$i]) . '" ></script>');
+	}
+}
+
+function displayShim() {
+	if (DISPLAY_SHIM) {
+		echor('	<!--[if lt IE 9]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->');
+	}
+}
 
 function getFiles($dir) {
 		if (!is_dir($dir)) {
@@ -41,15 +52,15 @@ function getFiles($dir) {
 function displayNav($type, $title = Null) {
 	global $posts;
 	
-	echo('<li><a class="nav-title" href="/posts/?t=' . $type . '">' . $title . '</a><ul>' . "\n");
+	echor('<li><a class="nav-title" href="/posts/?t=' . $type . '">' . $title . '</a><ul>');
 		
 	for ($i = (sizeof($posts)-1); 0 <= $i; $i--) {
 		if($posts[$i]->getType() == $type) {
-			echo('<li><a href="/posts/?p=' . $posts[$i]->getLink() . '">' . $posts[$i]->getTitle() . '</a></li>');
+			echor('<li><a href="/posts/?p=' . $posts[$i]->getLink() . '">' . $posts[$i]->getTitle() . '</a></li>');
 		}
 	}
 	
-	echo('</ul></li>');
+	echor('</ul></li>');
 }
 
 function displayCommentForm() {

@@ -1,14 +1,14 @@
 <?php
-//mySQL Config
-define('MYSQL_HOST', 'localhost');
-define('MYSQL_USER', 'root');
-define('MYSQL_PASSWORD', 'root');
-define('MYSQL_DATABASE', 'itc280');
+//Import Credentials file fir MySQL
+include('credentials.php');
+
+//Docktype for site
+define('DOCTYPE', '<!DOCTYPE html>');
 
 //Default theme to load
 define('DEFAULT_THEME', 'noisy-grey');
 
-//Turn on or off Theme link in footer
+//Turn on or off Theme link in footer (TRUE/FALSE)
 define('THEME_SWITCHER', TRUE);
 
 //Themes ('theme-folder' => 'Name of Theme',)
@@ -18,15 +18,24 @@ $themes = array(
 'dark'			=> 'Dark Theme'
 );
 
+//Folder where articles live
+define('ARTICLE_FOLDER', 'posts_content');
+
 //Theme Cookie Time out in days
 define('THEME_TIME', '30');
+
+//TODO:
+//Images foler in theme to load (no slashes)
+//define('IMG_FOLDER', 'images');
 
 //CSS foler in theme to load (no slashes)
 define('CSS_FOLDER', 'css');
 
-//todo:
 //JS foler in theme to load (no slashes)
-//define('JS_FOLDER', 'js');
+define('JS_FOLDER', 'js');
+
+//Torn on or off html5 shiv/shim (TRUE/FALSE)
+define('DISPLAY_SHIM', TRUE);
 
 //Header across all pages at top
 define('SITE_NAME', 'Thane Gill &#10093; ITC 280');

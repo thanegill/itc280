@@ -59,7 +59,7 @@ function displayType($type) {
 	
 	if ($type == 'assignment' || $type == 'extracredit' || $type == 'resource') {
 		for ($j=(sizeof($posts)-1); 0 <= $j; $j--) {
-			if($posts[$j]->getType() == $type) {
+			if ($posts[$j]->getType() == $type) {
 				$posts[$j]->displayArticle();
 			}
 		}

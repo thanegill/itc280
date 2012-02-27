@@ -31,17 +31,14 @@ class Post {
 	public function getFullTitle() {
 
 		if ($this->type == 'resource') {
-			$this->title = 'Resource &#10093;&#10093 ' . $this->title;
+			return('Resource &#10093;&#10093 ' . $this->title);
+		} elseif ($this->type == 'assignment') {
+			return('Assignment ' . $this->title);
+		} elseif ($this->type == 'extracredit') {
+			return('Extra Credit ' . $this->title);
+		} else {
+			return('Type ERROR' . $this->title);
 		}
-
-		if ($this->type == 'assignment') {
-			$this->title = 'Assignment ' . $this->title;
-		}
-
-		if ($this->type == 'extracredit') {
-			$this->title = 'Extra Credit ' . $this->title;
-		}
-		return($this->title);
 	}
 	public function getDate() {
 		return($this->date);

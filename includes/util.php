@@ -1,4 +1,9 @@
 <?php
+
+function echor($str) {
+	echo($str . "\n");
+}
+
 function listdiraux($dir, &$files) {
 	$handle = opendir($dir);
 	

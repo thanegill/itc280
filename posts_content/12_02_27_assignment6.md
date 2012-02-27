@@ -6,7 +6,7 @@ Time Spent: 30
 
 [Assignment 6 First DB](/assignmnets/A6/)
 
-I took my current function 'displayArticle()' put them in a tabke an rewote the function to play nice with mySQL.
+I took my current artickes as my content for the database then rewrote my currnet `displayArticle()` function to play nice with MySQL.
 
 	<?php
 	if (mysql_num_rows($result) > 0) {
