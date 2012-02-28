@@ -13,9 +13,10 @@ define('THEME_SWITCHER', TRUE);
 
 //Themes ('theme-folder' => 'Name of Theme',)
 $themes = array(
-'side-nav'		=> 'Side Nave Theme',
-'noisy-grey'	=> 'Top Nav Theme',
-'dark'			=> 'Dark Theme'
+'side-nav'			=> 'Side Nave',
+'noisy-grey'		=> 'Top Nav',
+'linen'				=> 'Linen',
+'natural-essence'	=> 'Natural Essence'
 );
 
 //Folder where articles live

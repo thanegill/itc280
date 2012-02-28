@@ -8,7 +8,6 @@ function displayHead($title = '') {
 	global $posts;
 	$pageTitle = $title;
 	include(findRoot() . 'themes/' .  THEME_FOLDER . '/head.php');
-	
 }
 
 function displayCSS() {
@@ -82,7 +81,7 @@ function displayFooterLinks() {
 		$index++;
 	}
 	
-	//Turn on Theme switcher
+	//Theme switcher
 	if (THEME_SWITCHER) {
 
         global $themes;
