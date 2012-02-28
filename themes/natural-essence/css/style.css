@@ -413,7 +413,7 @@ body {
 /* structure */
 #wrap {
   margin: 0 auto;
-  width: 800px;
+  width: 900px;
   background: #FBF9F4;
   border: 6px solid #332;
   border-radius: 5px;
@@ -455,7 +455,7 @@ nav ul li a nav a#active {
 }
 #content {
   border-right: 1px solid #E3E3D5;
-  width: 500px;
+  width: 600px;
   margin-right: -1px;
   background-color: #FBF9F4;
   padding: 20px;

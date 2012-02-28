@@ -1,19 +1,19 @@
 <?php
-//Import Credentials file fir MySQL
+//Import Credentials file for MySQL
 include('credentials.php');
 
-//Docktype for site
+//Doctype for site
 define('DOCTYPE', '<!DOCTYPE html>');
 
 //Default theme to load
-define('DEFAULT_THEME', 'noisy-grey');
+define('DEFAULT_THEME', 'linen');
 
 //Turn on or off Theme link in footer (TRUE/FALSE)
 define('THEME_SWITCHER', TRUE);
 
 //Themes ('theme-folder' => 'Name of Theme',)
 $themes = array(
-'side-nav'			=> 'Side Nave',
+'side-nav'			=> 'Side Nav',
 'noisy-grey'		=> 'Top Nav',
 'linen'				=> 'Linen',
 'natural-essence'	=> 'Natural Essence'

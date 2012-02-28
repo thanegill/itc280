@@ -1,5 +1,4 @@
 <form class="comment_form" name="comment_form" method="POST" action="/thankyou" onSubmit="return evalid()">
-	<script src="/js/validate.js" type="text/javascript"></script>
 	<h2>Submit a Comment</h2>
 	<p><?php echo(COMMENT_INSTUSTIONS); ?></p>
 	<table>
