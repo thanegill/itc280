@@ -34,9 +34,9 @@ if (mysql_num_rows($result) > 0) {
    		}
 
    		echo('<article>
-   			<h1><a href="/posts/?p=' . linkText($row['type'] . ' ' . $row['title']) . '">' . getFullTitle($row['title'], $row['type']) . '</a></h1>
+   			<h1><a href="/?a=' . linkText($row['type'] . ' ' . $row['title']) . '">' . getFullTitle($row['title'], $row['type']) . '</a></h1>
    			' . Markdown($row['body']). '
-   			<span class="date-comments">' . date('l\, F jS Y', strtotime($row['date'])) . $timeSpentWord . ' - <a href="/posts/?p=' . linkText($row['type'] . ' ' . $row['title']) . '#comments">' . 0 . ' Comments</a></span>
+   			<span class="date-comments">' . date('l\, F jS Y', strtotime($row['date'])) . $timeSpentWord . ' - <a href="/?a=' . linkText($row['type'] . ' ' . $row['title']) . '#comments">' . 0 . ' Comments</a></span>
    		</article>');
     }
     

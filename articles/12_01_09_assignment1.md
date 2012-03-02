@@ -3,7 +3,7 @@ Type: assignment
 Date: 2012-01-10
 Time Spent: 480
 
-***This post is old. I have rewritten the whole site from the ground up. See the [Post Class](http://itc280.thanegill.com/posts/?post=assignment-extra-credit-post-class) article for an update.***
+***This post is old. I have rewritten the whole site from the ground up. See the [Post Class](/?a=extracredit-zero-post-class) article for an update.***
 
 I wanted to challenge myself with this first project. I know enough about programming and PHP to do lots of things. So I created a simple blog that has a "database" as an array thats included in every page. I learned a lot doing this. Since this is my first scripting language that I have really programmed in it took me a little while to get used to how the variables worked. The one thing that I really am liking is the array as a key value pair. As an example this is the very crude and simple database that I have:
 

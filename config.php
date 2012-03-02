@@ -7,9 +7,9 @@ define('DOCTYPE', '<!DOCTYPE html>');
 
 //Article types ('Artlce Type' => 'articletype',)
 $ARTICLE_TYPES = array(
-'Assignment Posts' 			=> 'assignment',
-'Extra Credit Posts' 		=> 'extracredit',
-'Resource Posts' 			=> 'resource'
+'Assignment Posts' 		=> 'assignment',
+'Extra Credit Posts' 	=> 'extracredit',
+'Resource Posts' 		=> 'resource'
 );
 
 //Default theme to load
@@ -27,9 +27,9 @@ $themes = array(
 );
 
 //Folder where articles live
-define('ARTICLE_FOLDER', 'posts_content');
+define('ARTICLE_FOLDER', 'articles');
 
-//Theme Cookie Time out in days
+//Theme Cookie Timeout (days)
 define('THEME_TIME', '30');
 
 //CSS foler in theme to load (no slashes)
@@ -41,7 +41,7 @@ define('JS_FOLDER', 'js');
 //Turn on or off html5 shiv/shim (TRUE/FALSE)
 define('DISPLAY_SHIM', TRUE);
 
-//Turn on or off IE redirect
+//Turn on or off IE redirect (TRUE/FALSE)
 define('IE_BUMP', TRUE);
 
 //Location to bump IE users to

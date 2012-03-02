@@ -11,10 +11,9 @@ if (!function_exists('findRoot')) {
 }
 
 //Include necessaries
-include_once(findRoot() . 'includes/util.php');
-include_once(findRoot() . 'includes/theme.php');
-include_once(findRoot() . 'includes/markdown.php');
-include_once(findRoot() . 'includes/Post.php');
+include(findRoot() . 'includes/theme.php');
+include(findRoot() . 'includes/markdown.php');
+include(findRoot() . 'includes/Post.php');
 
 //Get posts
 $posts = getPosts(findRoot() . ARTICLE_FOLDER);

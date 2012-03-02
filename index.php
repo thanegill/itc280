@@ -3,23 +3,19 @@ function findRoot() { return(substr($_SERVER["SCRIPT_FILENAME"], 0, (stripos($_S
 
 include(findRoot() . 'run.php');
 
-displayHead('Blog');
-
-for ($i=(sizeof($posts)-1); 0 <= $i; $i--) {
-	$posts[$i]->displayArticle();
-}
-
-displayPager();
-
-function displayPager() {
-	global $posts;
-	echor('<div id="pagger"><ul>');
+if (!empty($_GET['a']) && isset($_GET['a'])) {
+	//Article
+	displayPost($_GET['a']);
 	
-	$numOfPages = sizeof($posts) / 4 ;
-	echo($numOfPages);
+} else if (!empty($_GET['t']) && isset($_GET['t'])) {
+	//Type
+	displayType($_GET['t']);
 	
-	echor('</ul></div>');
+} else {
+	//display all
+	displayType('all');
 }
 
 displayFooter();
+
 ?>
