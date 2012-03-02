@@ -5,6 +5,13 @@ include('credentials.php');
 //Doctype for site
 define('DOCTYPE', '<!DOCTYPE html>');
 
+//Article types ('Artlce Type' => 'articletype',)
+$ARTICLE_TYPES = array(
+'Assignment Posts' 			=> 'assignment',
+'Extra Credit Posts' 		=> 'extracredit',
+'Resource Posts' 			=> 'resource'
+);
+
 //Default theme to load
 define('DEFAULT_THEME', 'linen');
 
@@ -52,7 +59,7 @@ define('COMMENT_INSTUSTIONS', '<em>Any comments or questions that you have pleas
 //The Seperator for footer Links (incude the spaces here if wanted)
 define('FOOTER_SEPERATOR', ' | ');
 
-//links in the footer('Name of link' => 'http://ulr-link.com/',)
+//links in the footer ('Name of link' => 'http://ulr-link.com/',)
 $FOOTER_LINKS = array(
 'Contact' 					=> '/contact/',
 'Follow Me on Twitter' 		=> 'http://twitter.com/#!/thanegill',

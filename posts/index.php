@@ -3,31 +3,19 @@ function findRoot() { return(substr($_SERVER["SCRIPT_FILENAME"], 0, (stripos($_S
 
 include(findRoot() . 'run.php');
 
-if (!empty($_GET['p']) || isset($_GET['p'])) {
-
-	displayPost($_GET['p']);
-	
-} else if (!empty($_GET['t']) || isset($_GET['t'])) {
-
+if (!empty($_GET['a']) && isset($_GET['a'])) {
+	//Article
+	displayPost($_GET['a']);
+} else if (!empty($_GET['t']) && isset($_GET['t'])) {
+	//Type
 	displayType($_GET['t']);
-	
-} else if (!empty($_GET['post']) || isset($_GET['post'])) {
-	//Old POST type
-	displayPost($_GET['post']);
-	
-} else if (!empty($_GET['type']) || isset($_GET['type'])) {
-	//Old POST type
-	displayType($_GET['type']);
-	
 } else {
-
 	display404Error();
-	
 }
 
 function displayPost($postLink) {
 	global $posts;
-	$error = true;
+	$error = true;	
 	
 	for ($j=(sizeof($posts)-1); 0 <= $j; $j--) {
 		if ($posts[$j]->getLink() == $postLink) {
@@ -46,18 +34,14 @@ function displayPost($postLink) {
 }
 
 function displayType($type) {
-	global $posts;
+	global $posts, $ARTICLE_TYPES;
 	
-	//Assigns the pageTitle
-	if ($type == 'assignment') {
-		displayHead('Assignment Posts');
-	} elseif ($type == 'extracredit') {
-		displayHead('Extra Credit Posts');
-	} elseif ($type == 'resource') {
-		displayHead('Resource Posts');
-	}
-	
-	if ($type == 'assignment' || $type == 'extracredit' || $type == 'resource') {
+	if(in_array($type, $ARTICLE_TYPES)) {
+		//find key of type
+		$key = array_search($type, $ARTICLE_TYPES);
+		
+		displayHead($key);
+		
 		for ($j=(sizeof($posts)-1); 0 <= $j; $j--) {
 			if ($posts[$j]->getType() == $type) {
 				$posts[$j]->displayArticle();

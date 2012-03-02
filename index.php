@@ -9,5 +9,17 @@ for ($i=(sizeof($posts)-1); 0 <= $i; $i--) {
 	$posts[$i]->displayArticle();
 }
 
+displayPager();
+
+function displayPager() {
+	global $posts;
+	echor('<div id="pagger"><ul>');
+	
+	$numOfPages = sizeof($posts) / 4 ;
+	echo($numOfPages);
+	
+	echor('</ul></div>');
+}
+
 displayFooter();
 ?>

@@ -55,7 +55,7 @@ function displayNav($type, $title = Null) {
 		
 	for ($i = (sizeof($posts)-1); 0 <= $i; $i--) {
 		if($posts[$i]->getType() == $type) {
-			echor('<li><a href="/posts/?p=' . $posts[$i]->getLink() . '">' . $posts[$i]->getTitle() . '</a></li>');
+			echor('<li><a href="/posts/?a=' . $posts[$i]->getLink() . '">' . $posts[$i]->getTitle() . '</a></li>');
 		}
 	}
 	

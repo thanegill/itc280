@@ -31,7 +31,7 @@ class Post {
 	public function getFullTitle() {
 
 		if ($this->type == 'resource') {
-			return('Resource &#10093;&#10093 ' . $this->title);
+			return('Resource &#10093;&#10093; ' . $this->title);
 		} elseif ($this->type == 'assignment') {
 			return('Assignment ' . $this->title);
 		} elseif ($this->type == 'extracredit') {
@@ -128,9 +128,9 @@ class Post {
 		}
 
 		echo('<article>
-		<h1><a href="/posts/?p=' . $this->link .'">' . $this->getFullTitle() . '</a></h1>
+		<h1><a href="/posts/?a=' . $this->link .'">' . $this->getFullTitle() . '</a></h1>
 		' . Markdown($this->body). '
-		<span class="date-comments">' . date('l\, F jS Y', strtotime($this->date)) . $timeSpentWord . ' - <a href="/posts/?p=' . $this->link . '#comments">' . sizeof($this->comments) . ' ' . $commentWord . '</a></span>
+		<span class="date-comments">' . date('l\, F jS Y', strtotime($this->date)) . $timeSpentWord . ' - <a href="/posts/?a=' . $this->link . '#comments">' . sizeof($this->comments) . ' ' . $commentWord . '</a></span>
 		</article>');
 
 	}

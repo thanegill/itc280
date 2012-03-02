@@ -24,7 +24,7 @@ Each theme has this structure:
 		|   +- util.js
 		|
 		+- images
-		|   +- background.png : Images linked in CSS go here
+		|   +- background.png : CSS images links go here
 		|  
 		+- comment.php : Holds the comment form
 		|
