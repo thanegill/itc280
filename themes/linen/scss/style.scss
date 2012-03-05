@@ -1,0 +1,111 @@
+/*#######################################################
+##  	______                           __   ______   ##
+##     / ____/___  ____  _ ____  ___    / / /  __   |  ##
+##    / __/ / __ \/ __ `/ / __ \/ _ \  / / |  /_/  /   ##
+##   / /___/ / / / /_/ / / / / /  __/ / / /  __   |    ##
+##  /_____/_/ /_/\__, /_/_/ /_/\___/ / / /  /_/  /     ##
+##           /_______/ D E S I G N  /_/  \______/      ##
+##                                                     ##
+##                  engine18design.com                 ##
+##                        ©2012                        ##
+#######################################################*/
+
+@import "text.scss";
+@import "nav.scss";
+@import "comment.scss";
+@import "code.scss";
+
+$backgroundColor: #f1f1f1;
+$headerColor: #000;
+$bodyColor: #000;
+$teal: #00AFA0;
+$grey: #9F9F9F;
+$blue: #0069D6;
+$grey-light: #E8E8E8;
+$codeBackground: #222;
+
+//------ MIXINS -----//
+@mixin border-radius($radius: 5px) {
+	border-radius: $radius;
+	-moz-border-radius: $radius;
+	-webkit-border-radius: $radius;
+}
+
+@mixin box-shadow($x: 0, $y: 0, $blur: 1px, $color: #000000) {
+  box-shadow: $x $y $blur $color;
+  -moz-box-shadow: $x $y $blur $color;
+  -webkit-box-shadow: $x $y $blur $color;
+}
+
+@mixin box-shadow-inset($x: 0, $y: 0, $blur: 1px, $color: #000000) {
+  box-shadow: inset $x $y $blur $color;
+  -moz-box-shadow: inset $x $y $blur $color;
+  -webkit-box-shadow: inset $x $y $blur $color;
+
+}
+
+//---- MIXINS END ---//
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	overflow-y: scroll;
+}
+
+body {
+	width: 760px;
+	margin: 0 auto;
+	background-image: url("../images/linen.png");
+}
+
+#body_inner {
+	padding: 0px 30px 2px 30px;
+	margin: 30px 0;
+	background-color: $backgroundColor;
+	@include border-radius(10px);
+	@include box-shadow(0px, 0px, 9px, rgba(0, 0, 0, 0.2));
+}
+
+header {
+	margin-bottom: 15px;
+	padding-bottom: 2px;
+	border-bottom: 3px solid $teal;
+	
+	#site_title {
+		text-align: center;
+		
+		a {
+			@include fontsize(68px);
+			margin-bottom: 0;
+			padding: 0;
+			font-weight: bold;
+			color: $headerColor;
+			font-family: LeagueGothic, Helvetica, Arial,, sans-serif;
+			text-decoration: none;
+			letter-spacing: 8px;
+		}
+	}
+}
+
+article {
+	margin-bottom: 10px;
+	padding-bottom: 15px;
+	border-bottom: 1px solid $grey;
+	
+	&:last-of-type {
+		border: none;
+	}
+}
+
+footer {
+	padding: 3px 0;
+	
+	small#footer_links {
+		display: block;
+		font-size: 11px;
+		text-align: center;
+	}
+}

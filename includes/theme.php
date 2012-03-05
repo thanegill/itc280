@@ -57,19 +57,19 @@ function displayShim() {
 }
 
 function getFiles($dir) {
-		if (!is_dir($dir)) {
-			return false;
-		}
-		
-		$files = array();
-		listdiraux($dir, $files);
-		
-		if (!$files) {
-			return false;
-		}
-		sort($files, SORT_LOCALE_STRING);
-		return($files);
+	if (!is_dir($dir)) {
+		return false;
 	}
+	
+	$files = array();
+	listdiraux($dir, $files);
+	
+	if (!$files) {
+		return false;
+	}
+	sort($files, SORT_LOCALE_STRING);
+	return($files);
+}
 
 function displayNav($type, $title = Null) {
 	global $posts;
