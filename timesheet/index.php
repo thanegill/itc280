@@ -7,8 +7,8 @@ include(findRoot() . 'run.php');
 displayHead('Time Sheet'); //Site Title (address bar) appended with " | Thane Gill"
 
 ?>
-<article>
-    <h1 class="center"><a href="/posts/timesheet/">Time Sheet</a></h1>
+<article class="center">
+    <h1>Time Sheet</h1>
 	<table class="inLineTable">
 		<thead>
 			<tr>
@@ -20,15 +20,15 @@ displayHead('Time Sheet'); //Site Title (address bar) appended with " | Thane Gi
 		<tbody>
 	<?php
 		$totalTime = 0;
-		for ($i=(sizeof($posts)-1); 0 <= $i; $i--) {
-			if($posts[$i]->GetType() == 'assignment' || $posts[$i]->GetType() == 'extracredit') {
+		for ($i = 0; $i < sizeof($articles); $i++) {
+			if($articles[$i]->GetType() == 'assignment' || $articles[$i]->GetType() == 'extracredit') {
 				echo('<tr>
-						<td class="alignleft vmiddle"><a href="/posts/?p=' . $posts[$i]->getLink() . '">' . $posts[$i]->getFullTitle() . '</a></td>
-						<td class="alignright vmiddle">' . $posts[$i]->getDatePretty() . '</td>
-						<td class="aligncenter vmiddle">' . displayTimeSpent($posts[$i]->getTimeSpent()) . '</td>
+						<td class="alignleft vmiddle"><a href="/?a=' . $articles[$i]->getLink() . '">' . $articles[$i]->getFullTitle() . '</a></td>
+						<td class="alignright vmiddle">' . $articles[$i]->getDatePretty() . '</td>
+						<td class="aligncenter vmiddle">' . displayTimeSpent($articles[$i]->getTimeSpent()) . '</td>
 					</tr>');
 					
-				$totalTime += $posts[$i]->getTimeSpent();
+				$totalTime += $articles[$i]->getTimeSpent();
 			}
 		}
 	?>

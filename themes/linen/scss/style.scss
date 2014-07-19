@@ -25,6 +25,7 @@ $grey-light: #E8E8E8;
 $codeBackground: #222;
 
 //------ MIXINS -----//
+
 @mixin border-radius($radius: 5px) {
 	border-radius: $radius;
 	-moz-border-radius: $radius;
@@ -83,7 +84,7 @@ header {
 			padding: 0;
 			font-weight: bold;
 			color: $headerColor;
-			font-family: LeagueGothic, Helvetica, Arial,, sans-serif;
+			font-family: LeagueGothic, Helvetica, Arial, sans-serif;
 			text-decoration: none;
 			letter-spacing: 8px;
 		}

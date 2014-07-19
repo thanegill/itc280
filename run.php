@@ -10,19 +10,22 @@ if (!function_exists('findRoot')) {
 	function findRoot() { return(substr($_SERVER['SCRIPT_FILENAME'], 0, (stripos($_SERVER['SCRIPT_FILENAME'], $_SERVER['SCRIPT_NAME'])+1))); }
 }
 
-//Include necessaries
-include(findRoot() . 'includes/theme.php');
-include(findRoot() . 'includes/markdown.php');
-include(findRoot() . 'includes/Post.php');
-
-//Get posts
-$posts = getPosts(findRoot() . ARTICLE_FOLDER);
+define('WEB_ROOT', findRoot());
 
 //Get theme if set
-if (isset($_COOKIE['theme'])) {
-    define('THEME_FOLDER', $_COOKIE['theme']);
+if (isset($_COOKIE['theme']) && !empty($_COOKIE['theme'])) {
+    define('THEME_FOLDER', WEB_ROOT . 'themes/' . $_COOKIE['theme']);
 } else {
-    define('THEME_FOLDER', DEFAULT_THEME);
+    define('THEME_FOLDER', WEB_ROOT . 'themes/' . DEFAULT_THEME);
 }
+
+//Include necessaries
+include(WEB_ROOT . 'includes/theme.php');
+include(WEB_ROOT . 'includes/markdown.php');
+include(WEB_ROOT . 'includes/Post.php');
+
+//Get Articles
+$articles = getArticles(findRoot() . ARTICLE_FOLDER);
+
 
 ?>

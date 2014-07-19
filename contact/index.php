@@ -6,7 +6,7 @@ include(findRoot() . 'run.php');
 displayHead('Contact Me');
 
 ?>
-<article>
+<article class="center">
 	<h1 class="center">Contact Me</h1>
 	<form class="comment_form contact" name="comment_form" method="POST" action="/thankyou" onSubmit="return evalid()">
 		<table>

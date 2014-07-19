@@ -2,12 +2,15 @@
 function echor($str) {
 	echo($str . "\n");
 }
-
-function getRelPath($path) {
-	return(substr($path, strlen(findRoot())-1, strlen($path)));
+function echobr($str) {
+	echo($str . '<br />');
 }
 
-function getPosts($dir) {
+function getRelPath($path) {
+	return(substr($path, strlen(WEB_ROOT)-1, strlen($path)));
+}
+
+function getArticles($dir) {
 	if (!is_dir($dir)) {
 		return false;
 	}
@@ -24,25 +27,34 @@ function getPosts($dir) {
 		$toReturn[$key] = new Post($value);
 	}
 	
-	return($toReturn);
+	return(array_reverse($toReturn));
 }
 
-function displayHead($title = '') {
-	global $posts;
-	$pageTitle = $title;
-	include(findRoot() . 'themes/' .  THEME_FOLDER . '/head.php');
+function getVirturalPath($path) {
+
+	return(substr($path, strlen(WEB_ROOT) - 1, strlen($path)));
+}
+
+function displayHead($pageTitle = '') {
+	global $articles;
+	define('PAGE_TITLE', $pageTitle);
+	include(THEME_FOLDER . '/head.php');
+}
+
+function displayFooter() {
+	include(THEME_FOLDER . '/footer.php');
 }
 
 function displayCSS() {
-	$cssFiles = getFiles(findRoot() . 'themes/' . THEME_FOLDER . '/' . CSS_FOLDER);
+	$cssFiles = getFiles(THEME_FOLDER . '/' . CSS_FOLDER);
 	for ($i = 0; $i < sizeof($cssFiles); $i++) {
-		$cssFiles[$i] = substr($cssFiles[$i], strlen(findRoot())-1, strlen($cssFiles[$i]));
+		$cssFiles[$i] = substr($cssFiles[$i], strlen(WEB_ROOT)-1, strlen($cssFiles[$i]));
 		echor('	<link rel="stylesheet" type="text/css" href="' . $cssFiles[$i] . '" />');
 	}
 }
 
 function displayJS() {
-	$jsFiles = getFiles(findRoot() . 'themes/' . THEME_FOLDER . '/' . JS_FOLDER);
+	$jsFiles = getFiles(THEME_FOLDER . '/' . JS_FOLDER);
 	for ($i = 0; $i < sizeof($jsFiles); $i++) {
 		echor('	<script type="text/javascript" src="' . getRelPath($jsFiles[$i]) . '" ></script>');
 	}
@@ -72,13 +84,13 @@ function getFiles($dir) {
 }
 
 function displayNav($type, $title = Null) {
-	global $posts;
+	global $articles;
 	
 	echor('<li><a class="nav-title" href="/?t=' . $type . '">' . $title . '</a><ul>');
-		
-	for ($i = (sizeof($posts)-1); 0 <= $i; $i--) {
-		if($posts[$i]->getType() == $type) {
-			echor('<li><a href="/?a=' . $posts[$i]->getLink() . '">' . $posts[$i]->getTitle() . '</a></li>');
+	
+	for ($i = 0; $i < sizeof($articles); $i++) {
+		if($articles[$i]->getType() == $type) {
+			echor('<li><a href="/?a=' . $articles[$i]->getLink() . '">' . $articles[$i]->getTitle() . '</a></li>');
 		}
 	}
 	
@@ -86,14 +98,14 @@ function displayNav($type, $title = Null) {
 }
 
 function displayPost($postLink) {
-	global $posts;
-	$error = true;	
+	global $articles;
+	$error = true;
 	
-	for ($j=(sizeof($posts)-1); 0 <= $j; $j--) {
-		if ($posts[$j]->getLink() == $postLink) {
-			displayHead($posts[$j]->GetFullTitle());
-			$posts[$j]->displayArticle();
-			$posts[$j]->displayComments();
+	for ($i = 0; $i < sizeof($articles); $i++) {
+		if ($articles[$i]->getLink() == $postLink) {
+			displayHead($articles[$i]->GetFullTitle());
+			$articles[$i]->displayArticle();
+			$articles[$i]->displayComments();
 			displayCommentForm();
 			$error = false; //trips error to false if article found
 		}
@@ -105,39 +117,130 @@ function displayPost($postLink) {
 	}
 }
 
-function displayType($type) {
-	global $posts, $ARTICLE_TYPES;
+function displayType($type = 'all') {
+	global $articles, $ARTICLE_TYPES;
 	
-	if(in_array($type, $ARTICLE_TYPES)) {
-		//find key of type
-		$key = array_search($type, $ARTICLE_TYPES);
+	if (!empty($_GET['pg']) && isset($_GET['pg'])) {
+		$pg = $_GET['pg'];
+	} else {
+		$pg = 0;
+	}
+	
+	if (in_array($type, $ARTICLE_TYPES)) {
 		
-		displayHead($key);
+		displayHead(array_search($type, $ARTICLE_TYPES));
 		
-		for ($j=(sizeof($posts)-1); 0 <= $j; $j--) {
-			if ($posts[$j]->getType() == $type) {
-				$posts[$j]->displayArticle();
+		$articlesForPage = array();
+		
+		for ($j = 0; $j < sizeof($articles); $j++) {
+			if ($articles[$j]->getType() == $type) {
+				array_push($articlesForPage, $articles[$j]);
 			}
 		}
+		
+		//Get number of posts in type
+		$numOfPages = sizeof($articlesForPage) / ARTICLES_PER_PAGE;
+		
+		$start = $pg * ARTICLES_PER_PAGE;
+		$end = $start + ARTICLES_PER_PAGE;
+		
+		//If end goes over length of $articlesForPage
+		if ($end > sizeof($articlesForPage)) {
+			$end = sizeof($articlesForPage);
+		}	
+		
+		//display posts
+		for ($i = $start; $i < $end; $i++) {
+			$articlesForPage[$i]->displayArticle();
+		}
+		
+		displayPagation(sizeof($articlesForPage), $pg);
 		
 	} elseif ($type == 'all') {
 		//display all types
 		displayHead('Blog');
-		for ($i=(sizeof($posts)-1); 0 <= $i; $i--) {
-			$posts[$i]->displayArticle();
+		
+		//Get number of posts in type
+		$numOfPages = sizeof($articles) / ARTICLES_PER_PAGE;
+		
+		$start = ($pg * ARTICLES_PER_PAGE);
+		$end = $start + ARTICLES_PER_PAGE;
+		
+		//If end goes over length of $articlesForPage
+		if ($end > sizeof($articles)) {
+			$end = sizeof($articles);
+		}	
+		
+		//display posts
+		for ($i = $start; $i < $end; $i++) {
+			$articles[$i]->displayArticle();
 		}
-	
+		
+		displayPagation(sizeof($articles), $pg);
+			
 	} else {
 		display404Error();
 	}
 }
 
-function displayCommentForm() {
-	include(findRoot() . 'themes/' .  THEME_FOLDER . '/comment.php');
+function displayPagation($numPosts, $currentPage = 0) {
+	
+	$numOfPages = $numPosts / ARTICLES_PER_PAGE;
+	
+	if ($numOfPages > 1) {
+	
+		echor('<div id="pagation"><ul>');
+		
+		//Previous
+		if ($currentPage != 0) {
+			echor('<li class="next-previous"><a href="' . addPGquery($currentPage - 1) . '">Previous</a></li>');
+		}
+		
+		//Pages
+		for ($i=0; $i < $numOfPages; $i++) {
+			if ($currentPage == $i) {
+				echor('<li><a id="current-page" href="' . addPGquery($i) . '">' . ($i + 1) . '</a></li>');
+			} else {
+				echor('<li><a href="' . addPGquery($i) . '">' . ($i + 1 ) . '</a></li>');
+			}
+		}
+		
+		//Next
+		if (!($currentPage >= floor($numOfPages))) {
+			echor('<li class="next-previous"><a href="' . addPGquery($currentPage + 1) . '">Next</a></li>');
+		}
+		
+		echor('</ul></div>');
+		
+	}
 }
 
-function displayFooter() {
-	include(findRoot() . 'themes/' .  THEME_FOLDER . '/footer.php');
+function addPGquery($toAdd) {
+	$url = $_SERVER['REQUEST_URI'];
+	$url = removeQuery($url, 'pg');
+	$url = addQuery($url, 'pg', $toAdd);
+	return($url);
+}
+
+function addQuery($url, $key, $value) {
+    $url = preg_replace('/(.*)(?|&)' . $key . '=[^&]+?(&)(.*)/i', '$1$2$4', $url . '&');
+    $url = substr($url, 0, -1);
+    if (strpos($url, '?') === false) {
+        return ($url . '?' . $key . '=' . $value);
+    } else {
+        return ($url . '&' . $key . '=' . $value);
+    }
+}
+
+function removeQuery($url, $key) {
+	//TODO: 
+    $url = preg_replace('/(.*)(?|&)' . $key . '=[^&]+?(&)(.*)/i', '$1$2$4', $url . '&');
+    $url = substr($url, 0, -1);
+    return ($url);
+}
+
+function displayCommentForm() {
+	include(THEME_FOLDER . '/comment.php');
 }
 
 function displayFooterLinks() {
@@ -146,7 +249,7 @@ function displayFooterLinks() {
 	foreach ($FOOTER_LINKS as $name => $link) {
 		echo('<a href="' . $link . '">' . $name . '</a>');
 		if ($index != (sizeof($FOOTER_LINKS) - 1)) {
-			echo(FOOTER_SEPERATOR);
+			echo(FOOTER_SEPERATOR . "\n");
 		}
 		$index++;
 	}
@@ -157,7 +260,7 @@ function displayFooterLinks() {
         global $themes;
         
         foreach ($themes as $key => $value) {
-            echo(FOOTER_SEPERATOR . '<a href="/" onClick="createCookie(\'theme\', \'' . $key . '\', ' . THEME_TIME . ')">' . $value . '</a>');
+            echo(FOOTER_SEPERATOR . "\n" . '<a href="/" onClick="createCookie(\'theme\', \'' . $key . '\', ' . THEME_TIME . ')">' . $value . '</a>');
         }
         
 	}
@@ -170,7 +273,6 @@ function display404Error() {
 		<h3><a href="/">Back Home</a></h3>
 		</article>');
 }
-
 
 function listdiraux($dir, &$files) {
 	$handle = opendir($dir);
@@ -195,7 +297,6 @@ function listdiraux($dir, &$files) {
 	}
 	closedir($handle);
 }
-
 
 //Display Time; 8:23
 function displayTimeSpent($time) {

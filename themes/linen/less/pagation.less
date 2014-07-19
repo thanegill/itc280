@@ -1,0 +1,27 @@
+#pagation {
+	text-align: center;
+	ul {
+		li {
+			display: inline;
+			&.next-previous {
+			
+			}
+			
+			a {
+				padding: 5px 10px;
+				border: solid 1px @grey;
+				.border-radius(3px);
+				
+				&:hover {
+					background-color: @grey;
+					text-decoration: none;
+				}
+			}
+			
+			a#current-page {
+				background-color: @teal;
+			
+			}
+		}
+	}
+}

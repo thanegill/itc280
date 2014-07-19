@@ -441,6 +441,26 @@ pre .deletion {
   background-color: #420E09;
   color: #F8F8F8;
 }
+#pagation {
+  text-align: center;
+}
+#pagation ul li {
+  display: inline;
+}
+#pagation ul li a {
+  padding: 5px 10px;
+  border: solid 1px #9f9f9f;
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+}
+#pagation ul li a:hover {
+  background-color: #9f9f9f;
+  text-decoration: none;
+}
+#pagation ul li a#current-page {
+  background-color: #00afa0;
+}
 * {
   margin: 0;
   padding: 0;

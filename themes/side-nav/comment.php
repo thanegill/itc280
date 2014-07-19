@@ -17,7 +17,7 @@
 			</td>
 		</tr>
 		<tr>
-			<td><input type="hidden" name="page" value="<?php echo($pageTitle); ?>"></td>
+			<td><input type="hidden" name="page" value="<?php echo(PAGE_TITLE); ?>"></td>
 			<td><input type="submit" value="Submit" name="submit" onkeyup="return limitarelungime(this, 255)"></td>
 		</tr>
 	</table>

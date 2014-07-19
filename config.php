@@ -5,11 +5,14 @@ include('credentials.php');
 //Doctype for site
 define('DOCTYPE', '<!DOCTYPE html>');
 
-//Article types ('Artlce Type' => 'articletype',)
+//Number of articles per pager in the pagation
+define('ARTICLES_PER_PAGE', 4);
+
+//Article types ('Artlce Name' => 'articletype',)
 $ARTICLE_TYPES = array(
-'Assignment Posts' 		=> 'assignment',
-'Extra Credit Posts' 	=> 'extracredit',
-'Resource Posts' 		=> 'resource'
+'Assignment Posts'   => 'assignment',
+'Extra Credit Posts' => 'extracredit',
+'Resource Posts'     => 'resource'
 );
 
 //Default theme to load
@@ -20,10 +23,10 @@ define('THEME_SWITCHER', TRUE);
 
 //Themes ('theme-folder' => 'Name of Theme',)
 $themes = array(
-'side-nav'			=> 'Side Nav',
-'noisy-grey'		=> 'Top Nav',
-'linen'				=> 'Linen',
-'natural-essence'	=> 'Natural Essence'
+'side-nav'        => 'Side Nav',
+'noisy-grey'      => 'Top Nav',
+'linen'           => 'Linen',
+'natural-essence' => 'Natural Essence'
 );
 
 //Folder where articles live
@@ -61,12 +64,33 @@ define('FOOTER_SEPERATOR', ' | ');
 
 //links in the footer ('Name of link' => 'http://ulr-link.com/',)
 $FOOTER_LINKS = array(
-'Contact' 					=> '/contact/',
-'Follow Me on Twitter' 		=> 'http://twitter.com/#!/thanegill',
-'thanegill.com' 			=> 'http://thanegill.com/',
-'&copy; ' . date('Y')		=> '#',
-'Validate HTML' 			=> 'http://validator.w3.org/check?uri=referer',
-'Validate CSS' 				=> 'http://jigsaw.w3.org/css-validator/check/referer?profile=css3'
+'Contact'              => '/contact/',
+'Follow Me on Twitter' => 'http://twitter.com/#!/thanegill',
+'thanegill.com'        => 'http://thanegill.com/',
+'&copy; ' . date('Y')  => '#',
+'Validate HTML'        => 'http://validator.w3.org/check?uri=referer',
+'Validate CSS'         => 'http://jigsaw.w3.org/css-validator/check/referer?profile=css3'
+);
+
+define('FAVICON', 'icon.png');
+
+define('FIGLET', '<!--#####################################################
+##      ______                           __   ______   ##
+##     / ____/___  ____  _ ____  ___    / / /  __   |  ##
+##    / __/ / __ \/ __ `/ / __ \/ _ \  / / |  /_/  /   ##
+##   / /___/ / / / /_/ / / / / /  __/ / / /  __   /    ##
+##  /_____/_/ /_/\__, /_/_/ /_/\___/ / / /  /_/  |     ##
+##           /_______/ D E S I G N  /_/  \______/      ##
+##                                                     ##
+##                 engine18design.com                  ##
+##                   copyright 2012                    ##
+######################################################-->');
+
+
+$GLOBAL_META = array(
+'Author'  => 'Thane Gill',
+'email'   => 'me@thanegill.com',
+'website' => 'thanegill.com'
 );
 
 ?>
