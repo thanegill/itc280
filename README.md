@@ -4,3 +4,6 @@ This is the cumanation project and assigmnets and meta blog about it for my ITC 
 
 
 Sprokets what created by [Bill Newman](http://www.newmanix.com/itc280/), who was also my instructor.
+
+
+Not all fucntionallity is impelemeted by there is a live version at http://itc280.psophis.com/
