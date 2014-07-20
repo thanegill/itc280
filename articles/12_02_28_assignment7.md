@@ -4,7 +4,7 @@ Date: 2012-02-27
 Time Spent: 120
 
 
-Instead of using Bills Sprockets app I used my own file based "CMS" that this site is running off of and created multiple themes for it. I placed **links in the footer** that set a cookie via javascript. Those cookies are read by PHP on the page load. A default theme is loaded if the theme cookie isn't set yet.
+Instead of using Bills Sprockets app I used my own file based CMS that this site is running off of and created multiple themes for it. I placed **links in the footer** that set a cookie via javascript. Those cookies are read by PHP on the page load. A default theme is loaded if the theme cookie isn't set yet.
 
 Each theme has this structure:
 
@@ -57,9 +57,9 @@ Any CSS image or font links should be linked relative to the css file like this:
 
 They are linked like this so that you don't have to find the absolute path to the image or font.
 
-I've tried to not hard code any file paths. In my config folder I have the name of the javascript and css folder, that can be easily changed as well as a way to turn on or of the theme switching links in the footer.
+I've tried to not hard code any file paths. In my `config.php` I have the name of the javascript and css folder, that can be easily changed as well as a way to turn on or of the theme switching links in the footer.
 
-This is my config.php file that hold the theme setting as well as other site wide settings:
+This is my `config.php` file that hold the theme setting as well as other site wide settings:
 	
 	<?php
 	//Import Credentials file for MySQL

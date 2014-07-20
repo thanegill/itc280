@@ -12,7 +12,7 @@ Edited the layout of the form.
 
 [Assignment 4 Extra Credit](/assignmnets/A4_EC)
 
-contact_multiple.php edited to ask what music do you like? and If you like pie.
+`contact_multiple.php` edited to ask is you link pie ans what gene of music do you like?
 
 `sendEmail` is sent to false on both, so it will only display the data.
 

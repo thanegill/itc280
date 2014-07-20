@@ -31,6 +31,6 @@ I took my current articles as my content for the database then rewrote my curren
 	    
 	} else {
 		//no records
-	    echo('<h3>What! No customers?  There must be a mistake!!</h3>');
+	    echo('<h3>What! No customers? There must be a mistake!!</h3>');
 	}
 	?>
