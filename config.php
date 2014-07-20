@@ -16,7 +16,7 @@ $ARTICLE_TYPES = array(
 );
 
 //Default theme to load
-define('DEFAULT_THEME', 'linen');
+define('DEFAULT_THEME', 'noisy-grey');
 
 //Turn on or off Theme link in footer (TRUE/FALSE)
 define('THEME_SWITCHER', TRUE);
