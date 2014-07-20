@@ -45,7 +45,7 @@ define('JS_FOLDER', 'js');
 define('DISPLAY_SHIM', TRUE);
 
 //Turn on or off IE redirect (TRUE/FALSE)
-define('IE_BUMP', TRUE);
+define('IE_BUMP', FALSE);
 
 //Location to bump IE users to
 define('IE_BUMP_LOCATION', '/ie_sucks.html');
