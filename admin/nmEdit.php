@@ -23,7 +23,7 @@
  
 require '../includes/config_inc.php'; #provides configuration, pathing, error handling, db credentials  
  
-$myDB = "itc280"; #identify current database
+$myDB = "thanegill_itc280"; #identify current database
 $defaultTable = "test_Customers";  #identify which table you wish to show by default
 $allowEdit = 0; #1 allows add/edit/delete capabilities, zero disallows and hides
 $allowDelete = 0; #1 allows deletes (no effect on update) zero disallows and hides

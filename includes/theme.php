@@ -7,7 +7,7 @@ function echobr($str) {
 }
 
 function getRelPath($path) {
-	return(substr($path, strlen(WEB_ROOT)-1, strlen($path)));
+	return(substr($path, strlen(findRoot())-1, strlen($path)));
 }
 
 function getArticles($dir) {
@@ -30,31 +30,26 @@ function getArticles($dir) {
 	return(array_reverse($toReturn));
 }
 
-function getVirturalPath($path) {
-
-	return(substr($path, strlen(WEB_ROOT) - 1, strlen($path)));
-}
-
 function displayHead($pageTitle = '') {
 	global $articles;
 	define('PAGE_TITLE', $pageTitle);
-	include(THEME_FOLDER . '/head.php');
+	include(findRoot() . 'themes/' .  THEME_FOLDER . '/head.php');
 }
 
 function displayFooter() {
-	include(THEME_FOLDER . '/footer.php');
+	include(findRoot() . 'themes/' .  THEME_FOLDER . '/footer.php');
 }
 
 function displayCSS() {
-	$cssFiles = getFiles(THEME_FOLDER . '/' . CSS_FOLDER);
+	$cssFiles = getFiles(findRoot() . 'themes/' . THEME_FOLDER . '/' . CSS_FOLDER);
 	for ($i = 0; $i < sizeof($cssFiles); $i++) {
-		$cssFiles[$i] = substr($cssFiles[$i], strlen(WEB_ROOT)-1, strlen($cssFiles[$i]));
+		$cssFiles[$i] = substr($cssFiles[$i], strlen(findRoot())-1, strlen($cssFiles[$i]));
 		echor('	<link rel="stylesheet" type="text/css" href="' . $cssFiles[$i] . '" />');
 	}
 }
 
 function displayJS() {
-	$jsFiles = getFiles(THEME_FOLDER . '/' . JS_FOLDER);
+	$jsFiles = getFiles(findRoot() . 'themes/' . THEME_FOLDER . '/' . JS_FOLDER);
 	for ($i = 0; $i < sizeof($jsFiles); $i++) {
 		echor('	<script type="text/javascript" src="' . getRelPath($jsFiles[$i]) . '" ></script>');
 	}
@@ -240,7 +235,7 @@ function removeQuery($url, $key) {
 }
 
 function displayCommentForm() {
-	include(THEME_FOLDER . '/comment.php');
+	include(findRoot() . 'themes/' .  THEME_FOLDER . '/comment.php');
 }
 
 function displayFooterLinks() {

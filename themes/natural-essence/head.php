@@ -1,3 +1,4 @@
+<?php echor(DOCTYPE); ?>
 <!--#####################################################
 ##  	______                           __   ______   ##
 ##     / ____/___  ____  _ ____  ___    / / /  __   |  ##
@@ -9,7 +10,6 @@
 ##                  engine18design.com                 ##
 ##                        ©2012                        ##
 ######################################################-->
-<?php echor(DOCTYPE); ?>
 <html>
 <head>
 	<meta name="description" content=""/>
@@ -34,7 +34,7 @@
 		<nav>
 			<ul>
 				<li><a class="nav-title" href="/">Blog</a></li>
-				<li><a class="nav-title" href="/posts/?t=assignment">Assignmnets</a></li>
+				<li><a class="nav-title" href="/posts/?t=assignment">Assignments</a></li>
 				<li><a class="nav-title" href="/posts/?t=extracredit">Extra Credit</a></li>
 				<li><a class="nav-title" href="/posts/?t=resource">Resources</a></li>
 				<li><a class="nav-title" href="/timesheet/">Time Sheet</a></li>

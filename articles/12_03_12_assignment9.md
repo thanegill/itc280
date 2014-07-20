@@ -3,7 +3,7 @@ Type: assignment
 Date: 2012-03-12
 Time Spent: 180
 
-Since what Bill gave out was built for his sprockets applictaion I had to built my own implementation oif the pagger class. This is what I came up with:
+Since what Bill gave out was built for his sprockets applictaion I had to built my own implementation of the pagger class. This is what I came up with:
 
 	<?php
 	function displayPagation($numPosts, $currentPage = 0) {
