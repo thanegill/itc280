@@ -5,7 +5,7 @@ Time Spent: 480
 
 ***This post is old. I have rewritten the whole site from the ground up. See the [Post Class](/?a=extracredit-zero-post-class) article for an update.***
 
-I wanted to challenge myself with this first project. I know enough about programming and PHP to do enough to get started. So I created a simple blog that has a database as an array thats included in every page. I learned a lot by doing this. The one thing that I really like is the key value pair dictionary. As an example this is the very crude and simple database that I have:
+I wanted to challenge myself with this first project. I know enough about programming and PHP to do enough to get started. So I created a simple blog that has a database as an array that is included in every page. I learned a lot by doing this. The one thing that I really like is the key value pair dictionary. As an example this is the very crude and simple database that I have:
 
 
 	$post_names = array("Three" => "assignment3", "Two" => "assignment2", "One" => "assignment1");

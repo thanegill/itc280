@@ -18,7 +18,7 @@ Time Spent: none
 ##PHP Markdown Extra
 [PHP Markdown Extra](http://michelf.com/projects/php-markdown/extra/)
 
-Parses markdown files that all the articles/content are written in. It's the best php Markdown parser that i've come across. If you don't know what Markdown is read [this](http://daringfireball.net/projects/markdown/).
+Parses markdown files that all the articles/content are written in. It's the best php Markdown parser that I've come across. If you don't know what Markdown is read [this](http://daringfireball.net/projects/markdown/).
 
 ##Code Highlighter
 [Highlight.js](http://softwaremaniacs.org/soft/highlight/en/)

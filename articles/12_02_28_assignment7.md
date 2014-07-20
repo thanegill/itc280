@@ -34,9 +34,9 @@ Each theme has this structure:
 
 The only files that are absolutely needed are the header.php and footer.php.
 
-Any files in the js or css fodler are automatically link into the head. No manual linking!
+Any files in the js or css fodler are automatically linked into the head. No manual linking!
 
-Any CSS image or font links should be linked relative to the css file like this:
+Any CSS image or font links should be linked relative to the CSS file like this:
 
 	body {
 		width: 760px;
@@ -57,9 +57,9 @@ Any CSS image or font links should be linked relative to the css file like this:
 
 They are linked like this so that you don't have to find the absolute path to the image or font.
 
-I've tried to not hard code any file paths. In my `config.php` I have the name of the javascript and css folder, that can be easily changed as well as a way to turn on or of the theme switching links in the footer.
+I've tried to not hard code any file paths. In my `config.php` I have the name of the javascript and css folder, that can be easily changed as well as a way to turn on or off the theme switching links in the footer.
 
-This is my `config.php` file that hold the theme setting as well as other site wide settings:
+This is my `config.php` file that holds the theme settings well as other site wide settings:
 	
 	<?php
 	//Import Credentials file for MySQL

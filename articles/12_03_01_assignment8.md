@@ -7,4 +7,4 @@ This site is created with a list and view model. Each article has its own page t
 
 It is also possible to sort by type like this: `http://itc280.psophis.com/?t=assignment`.
 
-There are some differences from the assignment. One is that I am not running this from MySQL. I'm running it as a file based CMS, where each article is a separate file. Two is that I don't have any images that are linked. I can easily add this if it is need for the assignment. Bill said that it was ok as is.
+There are some differences from the assignment. One is that I am not running this from MySQL. I'm running it as a file based CMS, where each article is a separate file. Two is that I don't have any images that are linked. I can easily add this if it is needed for the assignment. Bill said that it was ok as is.
