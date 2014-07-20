@@ -14,10 +14,10 @@ function getArticles($dir) {
 	if (!is_dir($dir)) {
 		return false;
 	}
-	
+
 	$files = array();
 	listdiraux($dir, $files);
-	
+
 	if (!$files) {
 		return false;
 	}
@@ -26,7 +26,7 @@ function getArticles($dir) {
 	foreach ($files as $key => $value) {
 		$toReturn[$key] = new Post($value);
 	}
-	
+
 	return(array_reverse($toReturn));
 }
 
@@ -67,10 +67,10 @@ function getFiles($dir) {
 	if (!is_dir($dir)) {
 		return false;
 	}
-	
+
 	$files = array();
 	listdiraux($dir, $files);
-	
+
 	if (!$files) {
 		return false;
 	}
@@ -80,22 +80,22 @@ function getFiles($dir) {
 
 function displayNav($type, $title = Null) {
 	global $articles;
-	
+
 	echor('<li><a class="nav-title" href="/?t=' . $type . '">' . $title . '</a><ul>');
-	
+
 	for ($i = 0; $i < sizeof($articles); $i++) {
 		if($articles[$i]->getType() == $type) {
 			echor('<li><a href="/?a=' . $articles[$i]->getLink() . '">' . $articles[$i]->getTitle() . '</a></li>');
 		}
 	}
-	
+
 	echor('</ul></li>');
 }
 
 function displayPost($postLink) {
 	global $articles;
 	$error = true;
-	
+
 	for ($i = 0; $i < sizeof($articles); $i++) {
 		if ($articles[$i]->getLink() == $postLink) {
 			displayHead($articles[$i]->GetFullTitle());
@@ -105,7 +105,7 @@ function displayPost($postLink) {
 			$error = false; //trips error to false if article found
 		}
 	}
-	
+
 	//article not found
 	if ($error) {
 		display404Error();
@@ -114,83 +114,83 @@ function displayPost($postLink) {
 
 function displayType($type = 'all') {
 	global $articles, $ARTICLE_TYPES;
-	
+
 	if (!empty($_GET['pg']) && isset($_GET['pg'])) {
 		$pg = $_GET['pg'];
 	} else {
 		$pg = 0;
 	}
-	
+
 	if (in_array($type, $ARTICLE_TYPES)) {
-		
+
 		displayHead(array_search($type, $ARTICLE_TYPES));
-		
+
 		$articlesForPage = array();
-		
+
 		for ($j = 0; $j < sizeof($articles); $j++) {
 			if ($articles[$j]->getType() == $type) {
 				array_push($articlesForPage, $articles[$j]);
 			}
 		}
-		
+
 		//Get number of posts in type
 		$numOfPages = sizeof($articlesForPage) / ARTICLES_PER_PAGE;
-		
+
 		$start = $pg * ARTICLES_PER_PAGE;
 		$end = $start + ARTICLES_PER_PAGE;
-		
+
 		//If end goes over length of $articlesForPage
 		if ($end > sizeof($articlesForPage)) {
 			$end = sizeof($articlesForPage);
-		}	
-		
+		}
+
 		//display posts
 		for ($i = $start; $i < $end; $i++) {
 			$articlesForPage[$i]->displayArticle();
 		}
-		
+
 		displayPagation(sizeof($articlesForPage), $pg);
-		
+
 	} elseif ($type == 'all') {
 		//display all types
 		displayHead('Blog');
-		
+
 		//Get number of posts in type
 		$numOfPages = sizeof($articles) / ARTICLES_PER_PAGE;
-		
+
 		$start = ($pg * ARTICLES_PER_PAGE);
 		$end = $start + ARTICLES_PER_PAGE;
-		
+
 		//If end goes over length of $articlesForPage
 		if ($end > sizeof($articles)) {
 			$end = sizeof($articles);
-		}	
-		
+		}
+
 		//display posts
 		for ($i = $start; $i < $end; $i++) {
 			$articles[$i]->displayArticle();
 		}
-		
+
 		displayPagation(sizeof($articles), $pg);
-			
+
 	} else {
 		display404Error();
 	}
 }
 
 function displayPagation($numPosts, $currentPage = 0) {
-	
+
 	$numOfPages = $numPosts / ARTICLES_PER_PAGE;
-	
+
 	if ($numOfPages > 1) {
-	
+
 		echor('<div id="pagation"><ul>');
-		
+
 		//Previous
 		if ($currentPage != 0) {
 			echor('<li class="next-previous"><a href="' . addPGquery($currentPage - 1) . '">Previous</a></li>');
 		}
-		
+
 		//Pages
 		for ($i=0; $i < $numOfPages; $i++) {
 			if ($currentPage == $i) {
@@ -199,14 +199,14 @@ function displayPagation($numPosts, $currentPage = 0) {
 				echor('<li><a href="' . addPGquery($i) . '">' . ($i + 1 ) . '</a></li>');
 			}
 		}
-		
+
 		//Next
 		if (!($currentPage >= floor($numOfPages))) {
 			echor('<li class="next-previous"><a href="' . addPGquery($currentPage + 1) . '">Next</a></li>');
 		}
-		
+
 		echor('</ul></div>');
-		
+
 	}
 }
 
@@ -228,7 +228,7 @@ function addQuery($url, $key, $value) {
 }
 
 function removeQuery($url, $key) {
-	//TODO: 
+	//TODO:
     $url = preg_replace('/(.*)(?|&)' . $key . '=[^&]+?(&)(.*)/i', '$1$2$4', $url . '&');
     $url = substr($url, 0, -1);
     return ($url);
@@ -248,16 +248,16 @@ function displayFooterLinks() {
 		}
 		$index++;
 	}
-	
+
 	//Theme switcher
 	if (THEME_SWITCHER) {
 
         global $themes;
-        
+
         foreach ($themes as $key => $value) {
             echo(FOOTER_SEPERATOR . "\n" . '<a href="/" onClick="createCookie(\'theme\', \'' . $key . '\', ' . THEME_TIME . ')">' . $value . '</a>');
         }
-        
+
 	}
 }
 
@@ -271,19 +271,19 @@ function display404Error() {
 
 function listdiraux($dir, &$files) {
 	$handle = opendir($dir);
-	
+
 	while (($file = readdir($handle)) !== false) {
-	
+
 		if ($file ==  '.' || $file == '..') {
 			continue;
 		}
-		
+
 		$filepath = $dir == '.' ? $file : $dir . '/' . $file;
-			
+
 		if (is_link($filepath)) {
 			continue;
 		}
-		
+
 		if (is_file($filepath)) {
 			$files[] = $filepath;
 		} else if (is_dir($filepath)) {
@@ -297,24 +297,24 @@ function listdiraux($dir, &$files) {
 function displayTimeSpent($time) {
 	$hours = floor($time / 60);
 	$minutes = ($time % 60);
-	
+
 	if ($minutes == 0 ) {
 		$minutes = "00";
 	}
 	return($hours . ":" . $minutes);
 }
 
-function linkText($text) {	
+function linkText($text) {
 	$text = preg_replace('/\%/',' percentage',$text);
 	$text = preg_replace('/\@/',' at ',$text);
 	$text = preg_replace('/\&/',' and ',$text);
-	$text = preg_replace('/\s[\s]+/','-',$text); //Strip off multiple spaces 
-	$text = preg_replace('/[\s\W]+/','-',$text); //Strip off spaces and non-alpha-numeric 
-	$text = preg_replace('/^[\-]+/','',$text); //Strip off the starting hyphens 
+	$text = preg_replace('/\s[\s]+/','-',$text); //Strip off multiple spaces
+	$text = preg_replace('/[\s\W]+/','-',$text); //Strip off spaces and non-alpha-numeric
+	$text = preg_replace('/^[\-]+/','',$text); //Strip off the starting hyphens
 	$text = preg_replace('/and-10093-/','',$text); //Strip off the ending hyphens
-	$text = preg_replace('/[\-]+$/','',$text); //Strip off the ending hyphens 
+	$text = preg_replace('/[\-]+$/','',$text); //Strip off the ending hyphens
 	$text = strtolower($text);
-	
+
 	return($text);
 }
 
