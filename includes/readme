@@ -1,1 +1,0 @@
-Class uses the mysqli extension. So please enable it in your php.ini. In windows - uncomment the line 'extension=php_mysqli.dll' or if not found, add the line in dll section. I'm not sure about *nix.
