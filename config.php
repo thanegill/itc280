@@ -90,7 +90,7 @@ define('FIGLET', '<!--#####################################################
 $GLOBAL_META = array(
 'Author'  => 'Thane Gill',
 'email'   => 'me@thanegill.com',
-'website' => 'thanegill.com'
+'website' => 'psophis.com'
 );
 
 ?>
