@@ -1,9 +1,9 @@
-Title: Nine &#10093;&#10093; Pagation
+Title: Nine &#10093;&#10093; Pagination
 Type: assignment
 Date: 2012-03-12
 Time Spent: 180
 
-Since what Bill gave out was built for his sprockets applictaion I had to built my own implementation of the pagger class. This is what I came up with:
+Since what Bill gave out was built for his sprockets application I had to built my own implementation of the pager class. This is what I came up with:
 
 	<?php
 	function displayPagation($numPosts, $currentPage = 0) {
@@ -62,4 +62,4 @@ Since what Bill gave out was built for his sprockets applictaion I had to built 
 	}
 	?>
 
-I define `ARTICLES_PER_PAGE` as a constant in my `config.php` file. I add a class to the current page li and keep any existing querys in the url. The only problem is that if the `pg` varable in the query sting is the only one it won't repace the query; it will just add another one after it. If it's not the only query and I have an existing one that's not `pg` it will then add it and repace that same one when the page changes. I believe that this has something to do with the regular expression in the `removeQueary` function. Credit goes out to [AddedBytes](http://www.addedbytes.com/lab/php-querystring-functions/) for the `addQuery` and the `removeQuery` functions.
+I define `ARTICLES_PER_PAGE` as a constant in my `config.php` file. I added a class to the current page and keep any existing query in the url. The only problem is that if the `pg` variable in the query sting is the only one it won't replace the query; it will just add another one after it. If it's not the only query and I have an existing one that's not `pg` it will then add it and replace that same one when the page changes. I believe that this has something to do with the regular expression in the `removeQueary` function. Credit goes out to [AddedBytes](http://www.addedbytes.com/lab/php-querystring-functions/) for the `addQuery` and the `removeQuery` functions.

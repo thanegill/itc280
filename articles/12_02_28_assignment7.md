@@ -25,14 +25,14 @@ Each theme has this structure:
 		|
 		+- images
 		|   +- background.png : CSS images links go here
-		|  
+		|
 		+- comment.php : Holds the comment form
 		|
 		+- footer.php : HTML bottom
 		|
 		+- head.php : HTML top
 
-The only files that are absolutely needed are the header.php and footer.php. 
+The only files that are absolutely needed are the header.php and footer.php.
 
 Any files in the js or css fodler are automatically link into the head. No manual linking!
 
@@ -117,12 +117,12 @@ This is my config.php file that hold the theme setting as well as other site wid
 	
 	//links in the footer('Name of link' => 'http://ulr-link.com/',)
 	$FOOTER_LINKS = array(
-	'Contact' 					=> '/contact/',
-	'Follow Me on Twitter' 		=> 'http://twitter.com/#!/thanegill',
-	'thanegill.com' 			=> 'http://thanegill.com/',
-	'&copy; ' . date('Y')		=> '#',
-	'Validate HTML' 			=> 'http://validator.w3.org/check?uri=referer',
-	'Validate CSS' 				=> 'http://jigsaw.w3.org/css-validator/check/referer?profile=css3'
+	'Contact' 				=> '/contact/',
+	'Follow Me on Twitter' 	=> 'http://twitter.com/#!/thanegill',
+	'thanegill.com' 		=> 'http://thanegill.com/',
+	'&copy; ' . date('Y')	=> '#',
+	'Validate HTML' 		=> 'http://validator.w3.org/check?uri=referer',
+	'Validate CSS' 			=> 'http://jigsaw.w3.org/css-validator/check/referer?profile=css3'
 	);
 	
 	?>

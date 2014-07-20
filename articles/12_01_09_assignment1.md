@@ -11,7 +11,7 @@ I wanted to challenge myself with this first project. I know enough about progra
 
 I have definitely spent too much time on this, but I'm having fun learning about it doing it.
 
-My first problem that I ran into was when I was initializing ann array. I was trying it like this: `$varible[] = ("one", "two", "three");` then I tried this `$varible[] = array("one", "two", "three");>` then finally I tried `$varible = array("one", "two", "three");` which finally worked.
+My first problem that I ran into was when I was initializing an array. I was trying it like this: `$varible[] = ("one", "two", "three");` then I tried this `$varible[] = array("one", "two", "three");>` then finally I tried `$varible = array("one", "two", "three");` which finally worked.
 
 ##How to add a post
 
@@ -57,7 +57,7 @@ Once I do that these functions parse and print that into html tags:
 		<h1><a href=\"/posts/?post=" . $toInclude ."\">" . $articleTitle . "</a></h1>
 		" . Markdown($articleContent) . "
 		<span class=\"date-comments\">" . $articleDate . $timeSpentWord . " - <a href=\"/posts/?post=" . $toInclude . "#comments\">" . sizeof($articleComments) . " " . $commentWord . "</a></span>
-		</article>");	
+		</article>");
 	}
 	
 	//Display Comments
