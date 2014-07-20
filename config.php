@@ -12,7 +12,8 @@ define('ARTICLES_PER_PAGE', 4);
 $ARTICLE_TYPES = array(
 'Assignment Posts'   => 'assignment',
 'Extra Credit Posts' => 'extracredit',
-'Resource Posts'     => 'resource'
+'Resource Posts'     => 'resource',
+'Article'            => 'article'
 );
 
 //Default theme to load

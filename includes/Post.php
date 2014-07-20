@@ -36,6 +36,8 @@ class Post {
 			return('Assignment ' . $this->title);
 		} elseif ($this->type == 'extracredit') {
 			return('Extra Credit ' . $this->title);
+		} elseif ($this->type == 'article') {
+			return($this->title);
 		} else {
 			return('Type ERROR' . $this->title);
 		}
