@@ -22,7 +22,7 @@ $config = new stdClass; #standard class allows dynamic property assignment - use
 ###########################################################
 
 # Automatic path settings - use the following 4 path settings for placing all code in one application folder
-define('VIRTUAL_PATH', 'http://itc280.thanegill.com/'); # Virtual (web) 'root' of application for images, JS & CSS files
+define('VIRTUAL_PATH', 'http://itc280.psophis.com/'); # Virtual (web) 'root' of application for images, JS & CSS files
 define('PHYSICAL_PATH', findRoot()); # Physical (PHP) 'root' of application for file & upload reference
 define('INCLUDE_PATH', PHYSICAL_PATH . 'includes/'); # Path to PHP include files - INSIDE APPLICATION ROOT
 define('LOG_PATH', INCLUDE_PATH . 'log/'); # Log files are stored in the PHP include folder
